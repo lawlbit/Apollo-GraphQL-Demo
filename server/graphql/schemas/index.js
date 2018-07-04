@@ -33,7 +33,7 @@ const playerType = new GraphQLObjectType({
         characters: {
             type: new GraphQLList(pcType),
             resolve(parent, args){
-                return PC.find({playerID: parent.id});
+                return PC.find({playerID: parent.playerID});
             }
         }
     })

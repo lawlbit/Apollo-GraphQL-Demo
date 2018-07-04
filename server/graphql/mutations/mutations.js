@@ -24,7 +24,7 @@ const Mutations = new GraphQLObjectType({
             resolve(parent, args){
                 let player = new Player({
                     playerID: args.playerID,
-                    name: args.name
+                    playerName: args.playerName
                 });
                 return player.save();
             }
