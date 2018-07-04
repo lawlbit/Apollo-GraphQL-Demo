@@ -7,36 +7,36 @@ const Story = require('../../models/story');
 const {
     GraphQLObjectType,
     GraphQLString,
-    GraphQLID,
-    GraphQLList
+    GraphQLList,
+    GraphQLInt
 } = graphql;
 
 const RootQuery = new GraphQLObjectType({
-    name: RootQuery,
+    name: 'RootQuery',
     fields: {
         getStory:{
             type: schema.storyType,
             args: {
-                id: {type: GraphQLID},
+                storyID: {type: GraphQLInt},
             },
             resolve(parent, args){
-                return Story.findById(args.id);
+                return Story.findById({storyID: args.storyID});
             }
         },
         getPlayer:{
             type: schema.playerType,
             args: {
-                id: {type: GraphQLID},
+                playerID: {type: GraphQLInt},
             },
             resolve(parent, args){
-                return Player.findById(args.id);
+                return Player.find({playerID: args.playerID});
             }
         },
         getCharacter:{
             type: new GraphQLList(schema.pcType),
             args: {
-                storyID: {type: GraphQLID},
-                playerID: {type: GraphQLID},
+                storyID: {type: GraphQLInt},
+                playerID: {type: GraphQLInt},
                 name: {type: GraphQLString},
                 class: {type: GraphQLString},
             },
@@ -59,3 +59,5 @@ const RootQuery = new GraphQLObjectType({
     }
 
 });
+
+module.exports = {RootQuery};
