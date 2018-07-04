@@ -11,4 +11,7 @@ Apollo for GraphQL is a technology that expedite the process of building a Graph
 The Apollo Client allows for improved frontend 
 
 ## What is needed for this run through?
-To run through this tutorial make sure node is installed on your machine as most of this tutorial will be done in NodeJs. Other than that git would be nice as you could then just clone this repository to the local machine.
+To run through this tutorial make sure node is installed on your machine as most of this tutorial will be done in NodeJs. Make sure to also have a local version of MongoDB running as that is what I will be using to save the data. My local version is running on port `27017`. As this is not a mongoDB tutorial I will not go into further details with regards to installing MongoDb on your machine.
+
+## Further Learning
+If this tutorial sparked any remote interest in Graphql or Apollo take a look at this youtube tutorial series: `https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f`. It is a great more in-depth tutorial than I can give in the given hour. I also used it help generate a bit of my own content.
